@@ -11,3 +11,24 @@ services:
       - "3000:3000"
     environment:
       NODE_ENV: development
+
+  mysql:
+    image: mysql
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      - MYSQL_DATABASE=review
+      - MYSQL_ROOT_PASSWORD=S3cret
+      - MYSQL_PASSWORD=mauFJcuf5dhRMQrjj
+      - MYSQL_USER=review
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql:/var/lib/mysql
+  adminer:
+    image: adminer
+    restart: always
+    environment:
+      ADMINER_DEFAULT_SERVER: mysql
+    ports:
+      - 8080:8080

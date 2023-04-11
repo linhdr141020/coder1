@@ -22,7 +22,7 @@ export default function Home() {
         tempore officia!ưert
       </p>
       <Link href="/coders/">
-        <span className="btn">See All Coders</span>
+        <span className="btn">See All Coders See</span>
       </Link>
 
       <style jsx>
